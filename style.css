@@ -412,3 +412,66 @@ h1 {
     bottom: 60px;
   }
 }
+
+/* Chat message bubbles and spacing for better readability */
+.chat-message {
+  margin: 6px 0;
+  max-width: 85%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+  word-wrap: break-word;
+}
+
+.chat-message.user {
+  background: #e6f1e6;
+  color: #111;
+  margin-left: auto;
+  text-align: right;
+}
+
+.chat-message.assistant {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  margin-right: auto;
+  text-align: left;
+}
+
+.chat-message p {
+  margin: 0 0 8px 0;
+}
+
+.chat-message p:last-child {
+  margin-bottom: 0;
+}
+
+.chat-message.assistant.thinking {
+  font-style: italic;
+  opacity: 0.95;
+}
+
+/* Dots animation for thinking indicator */
+.dots {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+.dots span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  opacity: 0.15;
+  transform: translateY(0);
+  animation: dot-bounce 1s infinite ease-in-out;
+}
+.dots span:nth-child(1) { animation-delay: 0s; }
+.dots span:nth-child(2) { animation-delay: 0.12s; }
+.dots span:nth-child(3) { animation-delay: 0.24s; }
+
+@keyframes dot-bounce {
+  0%, 80%, 100% { opacity: 0.15; transform: translateY(0); }
+  40% { opacity: 0.95; transform: translateY(-6px); }
+}
